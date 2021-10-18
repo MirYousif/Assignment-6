@@ -35,12 +35,20 @@ class PrisonersDilemma /* possible extends... */ {        //inherit the methods 
 
                 playingfield = new PlayingField();
                 frame = new JFrame("Prisoners Dilemma");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.add(playingfield, BorderLayout.CENTER);
                 go = new JButton("GO");
+                go.addActionListener(playingfield);
                 pause = new JButton("Pause");
+                pause.addActionListener(playingfield);
                 resetButton = new JButton("Reset");
-                resetButton.addActionListener (setGrid);
+                resetButton.addActionListener (playingfield);
+                frame.add(go, BorderLayout.EAST);                                  //fix positioning of buttons // also creat constructor class in playing field setting the size of the panel
+                frame.add(pause, BorderLayout.WEST);
                 frame.add(resetButton, BorderLayout.SOUTH);
+                // frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+                frame.setSize(800, 800);
+                frame.setVisible(true);
 
 
             }

@@ -16,10 +16,11 @@ import javax.swing.Timer;
 import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Dimension;
 
 
 class PlayingField extends JPanel  implements ActionListener /* possible implements ... */ {
-    
+
     private Patch[][] grid;
     
     private double alpha; // defection award factor
@@ -31,6 +32,12 @@ class PlayingField extends JPanel  implements ActionListener /* possible impleme
     public static final Random random = new Random( SEED );         
     
     //...
+
+    public PlayingField() {
+
+        setPreferredSize(new Dimension(500, 450));
+        
+    }
     
     /**
      * calculate and execute one step in the simulation 
@@ -67,12 +74,27 @@ class PlayingField extends JPanel  implements ActionListener /* possible impleme
     // item in inGrid is true
     public void setGrid( boolean[][] inGrid) {
         // ...
+
     }   
 
 
     @Override
     public void actionPerformed(ActionEvent e) {  /// Fill in the functin of hte buttons here!!!!!
         // TODO Auto-generated method stub
+
+        if ("GO".equals(e.getActionCommand())) {
+
+            // start the simulation
+
+        } else if ("Pause".equals(e.getActionCommand())) {
+
+            //pause simulation
+
+        } else if ( "Reset".equals(e.getActionCommand()) ) {
+
+            // start the simulation again
+
+        }
         
     }
 }
